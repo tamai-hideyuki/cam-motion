@@ -8,7 +8,7 @@ VENV           := venv
 INSTALL_SCRIPT := scripts/install_deps.sh
 RUN_SCRIPT     := scripts/run.sh
 
-.PHONY: install run run-line clean
+.PHONY: install run run-line run-trace clean
 
 # install: 仮想環境作成＋依存インストール
 install:
@@ -27,6 +27,12 @@ run-line: install
 	@echo "[MAKE] run-line: launching cam-motion (line mode)..."
 	@chmod +x $(RUN_SCRIPT)
 	@$(RUN_SCRIPT) --mode line
+
+# run-trace: 空間トレースモード
+run-trace: install
+	@echo "[MAKE] run-trace: launching cam-motion (trace mode)..."
+	@chmod +x $(RUN_SCRIPT)
+	@$(RUN_SCRIPT) --mode trace
 
 # clean: 仮想環境を削除
 clean:

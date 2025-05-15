@@ -8,15 +8,19 @@
 
 - **Makefile を使って環境構築から実行まで一括実行**
 
-  ```bash
-  # デフォルトモード：手追跡
-  make run
+```bash
+# 手追跡
+make run
 
-  # 線検出モード：実世界の線を可視化
-  make run-line
+# 線検出
+make run-line
 
-  # 仮想環境をまっさらに
-  make clean
+# 空間トレース（動きの軌跡描画）
+make run-trace
+
+# 仮想環境リセット
+make clean
+
 ---
 
 ## 📋 大まかなディレクトリ構成：

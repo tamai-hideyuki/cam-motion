@@ -4,8 +4,9 @@ set -euo pipefail
 # == 定義 ==
 PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 VENV_DIR="$PROJECT_ROOT/venv"
-MAIN_SCRIPT="$PROJECT_ROOT/examples/hand_tracking.py"
+HAND_SCRIPT="$PROJECT_ROOT/examples/hand_tracking.py"
 LINE_SCRIPT="$PROJECT_ROOT/examples/line_detection.py"
+TRACE_SCRIPT="$PROJECT_ROOT/examples/spatial_trace.py"
 
 # === 引数パース ===
 MODE="hand"
@@ -39,8 +40,12 @@ case "$MODE" in
     SELECTED="$LINE_SCRIPT"
     echo "[INFO]: cam-motion モード=線検出 → line_detection.py を実行"
     ;;
+  trace)
+    SELECTED="$TRACE_SCRIPT"
+    echo "[INFO]: cam-motion モード=空間トレース → spatial_trace.py を実行"
+    ;;
   *)
-    echo "[ERROR]: 未知のモード \"$MODE\"。--mode hand|line を指定してください。"
+    echo "[ERROR]: 未知のモード \"$MODE\"。--mode hand|line|trace を指定してください。"
     exit 1
     ;;
 esac
