@@ -1,0 +1,40 @@
+# ── Python 仮想環境 ──
+venv/
+.env/
+
+# ── Python キャッシュとビルド成果物 ──
+__pycache__/
+*.py[cod]
+*$py.class
+
+# ── テスト結果 ／ カバレッジレポート ──
+htmlcov/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+pytest_cache/
+
+# ── IDE／エディタ設定 ──
+.vscode/
+*.code-workspace
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# ── OS 固有ファイル ──
+.DS_Store
+Thumbs.db
+
+# ── ログファイル ──
+*.log
+
+# ── ビルド／配布用成果物 ──
+dist/
+build/
+*.egg-info/
+*.egg
+
+# ── その他一時ファイル ──
+*.swp
+*~
