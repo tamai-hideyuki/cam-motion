@@ -9,14 +9,23 @@
 - **Makefile を使って環境構築から実行まで一括実行**
 
 ```bash
-# 手追跡
+# 初回／依存インストール
+make install
+
+# 手の追跡
 make run
 
-# 線検出
+# 実世界の線検出
 make run-line
 
-# 空間トレース（動きの軌跡描画）
+# 動きの軌跡トレース
 make run-trace
+
+# 歩道の縁取り検出
+make run-curb
+
+# 障害物検出
+make run-obstacle
 
 # 仮想環境リセット
 make clean
