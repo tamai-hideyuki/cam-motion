@@ -4,13 +4,11 @@
 .DEFAULT_GOAL := run
 
 # 仮想環境のディレクトリ
-VENV := venv
-PYTHON := $(VENV)/bin/python
-PIP    := $(VENV)/bin/pip
+VENV           := venv
 INSTALL_SCRIPT := scripts/install_deps.sh
-RUN_SCRIPT := scripts/run.sh
+RUN_SCRIPT     := scripts/run.sh
 
-.PHONY: install run clean
+.PHONY: install run run-line clean
 
 # install: 仮想環境作成＋依存インストール
 install:
@@ -18,11 +16,17 @@ install:
 	@chmod +x $(INSTALL_SCRIPT)
 	@$(INSTALL_SCRIPT)
 
-# run: install の後に実行スクリプトを起動
+# run: 手追跡モード（デフォルト）
 run: install
-	@echo "[MAKE] run: launching cam-motion..."
+	@echo "[MAKE] run: launching cam-motion (hand mode)..."
 	@chmod +x $(RUN_SCRIPT)
-	@$(RUN_SCRIPT)
+	@$(RUN_SCRIPT) --mode hand
+
+# run-line: 線検出モード
+run-line: install
+	@echo "[MAKE] run-line: launching cam-motion (line mode)..."
+	@chmod +x $(RUN_SCRIPT)
+	@$(RUN_SCRIPT) --mode line
 
 # clean: 仮想環境を削除
 clean:
