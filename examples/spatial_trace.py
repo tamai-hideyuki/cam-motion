@@ -4,8 +4,8 @@ import mediapipe as mp
 from collections import deque
 
 # --- 設定 ---
-MAX_TRAIL = 64        # 軌跡として残すフレーム数
-POINT_IDX = 8         # 人差し指先のランドマーク index (0=手首, 8=人差し指先)
+MAX_TRAIL = 120        # 軌跡として残すフレーム数
+POINT_IDX = 8        # 人差し指先のランドマーク index (0=手首, 8=人差し指先)
 TRAIL_COLOR = (0,255,0)
 TRAIL_THICKNESS = 2
 
