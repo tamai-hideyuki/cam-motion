@@ -36,7 +36,7 @@
 ## 📦 インストール方法
 #### リポジトリをクローン
 ```
-git clone https://github.com/your-username/cam-motion.git
+https://github.com/tamai-hideyuki/cam-motion.git
 cd cam-motion
 ```
 #### 仮想環境 & 依存構築
