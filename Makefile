@@ -5,8 +5,8 @@
 
 # 仮想環境のディレクトリ
 VENV := venv
-PYTHON := $(VENV)/bin/python3
-PIP := $(VENV)/bin/pip
+PYTHON := $(VENV)/bin/python
+PIP    := $(VENV)/bin/pip
 INSTALL_SCRIPT := scripts/install_deps.sh
 RUN_SCRIPT := scripts/run.sh
 
